@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+        <!-- Favicon -->
+    <!-- <link rel="shortcut icon" href="favicon.png"> -->
+ <!-- User profile -->
+    <!-- Custom CSS --> 
+    <link href="/assetsuser/css/styles.css" rel="stylesheet">
+		
+    <!-- Custom Color Option -->
+    <link href="/assetsuser/css/colors.css" rel="stylesheet">
+    
+    <!-- Font -->
+    <link rel="stylesheet" href="/assets/css2.css?family=Jost:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="/assets/css2-1.css?family=Fredoka+One&family=Lora:wght@400;700&family=Montserrat:wght@400;500;600;700&family=Nunito:wght@400;700&display=swap">
+
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="/assets/fonts/fontawesome/fontawesome.css">
+    <link rel="stylesheet" href="/assets/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/assets/libs/aos/dist/aos.css">
+    <link rel="stylesheet" href="/assets/libs/choices.js/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="/assets/libs/flickity-fade/flickity-fade.css">
+    <link rel="stylesheet" href="/assets/libs/flickity/dist/flickity.min.css">
+    <link rel="stylesheet" href="/assets/libs/highlightjs/styles/vs2015.css">
+    <link rel="stylesheet" href="/assets/libs/jarallax/dist/jarallax.css">
+    <link rel="stylesheet" href="/assets/libs/quill/dist/quill.core.css">
+
+    <!-- Map --> 
+    <link href='../../mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'>
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css">
+    <!-- Change style.scss Sass fayl o'zgartirish uchun -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Webpage Title -->
+    
+    <title><%= title %></title>
+    
+    <style>
+        .header_user{ 
+            background-color: #2f2d51;
+            width: 100%;
+            height: 171px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    
+
+</head >
+<body class="red-skin">
+    
+
+      <section class="gray pt-0">
+        <div class="container-fluid">
+            
+            <!-- Row -->
+            <div class="row">
+            
+                <div class="col-lg-3 col-md-3 p-0">
+                    <div class="dashboard-navbar">
+                        
+                        <div class="d-user-avater">
+                            <img src="assetsuser/img/user-3.jpg" class="img-fluid avater" alt="">
+                            <h4><%= user.name %></h4>
+                            <span>Kasbi</span>
+                        </div>
+                        
+                        <div class="d-navigation">
+                            <ul id="side-menu">
+                                <li><a href="/userCourse/<%= user._id %>"><i class="ti-layers"></i>Mening kurslarim</a></li>
+                                <li><a href="/userPay/<%= user._id %>"><i class="ti-shopping-cart"></i>Mening To'lovlarim</a></li>
+                                <li><a href="/userSettings/<%= user._id %>"><i class="ti-settings"></i>Sozlash</a></li>
+                                <li><a href="/userIdea/<%= user._id %>"><i class="ti-comment-alt"></i>Fikringiz</a></li>
+                                <li><a href="/userSertificat/<%= user._id %>"><i class="ti-comment-alt"></i>Sertifikat</a></li>
+                                <li><a href="/pupilDiplom/<%= user._id %>"><i class="ti-comment-alt"></i>Full Sertifikat</a></li>
+                                <li><a href="/userAriza/<%= user._id %>">
+                                    <i class="ti-comment-alt"></i>Ariza</a>
+                                </li>
+                                <li><a href="/user/logout"><i class="ti-power-off"></i>Chiqish</a></li>
+                            </ul>
+                        </div>
+                         
+                    </div>
+                    
+                    
+                </div>	
+                
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    
+                    <!-- Row -->
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 pt-4 pb-4">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb ">
+                                    <li class="breadcrumb-item ml-3"><a href="/">Bosh sahifa</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Mening profilim</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- /Row -->
+                    
+                    <!-- Row -->
+                    <!-- <div class="row align-items-center">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="dashboard_container">
+                                <div class="dashboard_container_body p-4">
+                                    <div class="viewer_detail_wraps">
+                                        <div class="viewer_detail_thumb">
+                                            <img src="assetsuser/img/user-5.jpg" class="img-fluid" alt="">
+                                            <div class="viewer_status">pro</div>
+                                        </div>
+                                        <div class="caption">
+                                            <div class="viewer_package_status">Expire in 5 Days</div>
+                                            <div class="viewer_header">
+                                                <h4>Marrion Willsoriam</h4>
+                                                <span class="viewer_location">Montreal, Canada</span>
+                                                <ul>
+                                                    <li><strong>112</strong> Points</li>
+                                                    <li><strong>10</strong> Classes Completed</li>
+                                                    <li><strong>18</strong> Lessions Completed</li>
+                                                </ul>
+                                            </div>
+                                            <div class="viewer_header">
+                                                <ul class="badge_info">
+                                                    <li class="started"><i class="ti-rocket"></i></li>
+                                                    <li class="medium"><i class="ti-cup"></i></li>
+                                                    <li class="platinum"><i class="ti-thumb-up"></i></li>
+                                                    <li class="elite unlock"><i class="ti-medall"></i></li>
+                                                    <li class="power unlock"><i class="ti-crown"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- /Row -->
+                    
+                    <%- body %>
+                   
+                    
+                </div>
+            
+            </div>
+            <!-- Row -->
+            
+        </div>
+    </section>
+  
+
+    
+
+    
+
+     <!-- User profile -->
+     <!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- All Jquery -->
+		<!-- ============================================================== -->
+		<script src="assetsuser/js/jquery.min.js"></script>
+		<script src="assetsuser/js/popper.min.js"></script>
+		<script src="assetsuser/js/bootstrap.min.js"></script>
+		<script src="assetsuser/js/select2.min.js"></script>
+		<script src="assetsuser/js/slick.js"></script>
+		<script src="assetsuser/js/jquery.counterup.min.js"></script>
+		<script src="assetsuser/js/counterup.min.js"></script>
+		<script src="assetsuser/js/custom.js"></script>
+		<!-- ============================================================== -->
+		<!-- This page plugins -->
+		<!-- ============================================================== -->
+		<script src="assetsuser/js/metisMenu.min.js"></script>	
+		<script>
+			$('#side-menu').metisMenu();
+		</script>
+   <!-- JAVASCRIPT
+    ================================================== -->
+    
+    <!-- Libs JS -->
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+    <script src="assets/libs/aos/dist/aos.js"></script>
+    <script src="assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="assets/libs/countup.js/dist/countUp.min.js"></script>
+    <script src="assets/libs/dropzone/dist/min/dropzone.min.js"></script>
+    <script src="assets/libs/flickity/dist/flickity.pkgd.min.js"></script>
+    <script src="assets/libs/flickity-fade/flickity-fade.js"></script>
+    <script src="assets/libs/highlightjs/highlight.pack.min.js"></script>
+    <script src="assets/libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/libs/isotope-layout/dist/isotope.pkgd.min.js"></script>
+    <script src="assets/libs/jarallax/dist/jarallax.min.js"></script>
+    <script src="assets/libs/jarallax/dist/jarallax-video.min.js"></script>
+    <script src="assets/libs/jarallax/dist/jarallax-element.min.js"></script>
+    <script src="assets/libs/parallax-js/dist/parallax.min.js"></script>
+    <script src="assets/libs/quill/dist/quill.min.js"></script>
+    <script src="assets/libs/smooth-scroll/dist/smooth-scroll.min.js"></script>
+    <script src="assets/libs/typed.js/lib/typed.min.js"></script>
+
+    <!-- Map -->
+    <script src='../../mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+    <!-- Theme JS -->
+    <script src="assets/js/theme.min.js"></script>
+
+
+</body>
+</html>

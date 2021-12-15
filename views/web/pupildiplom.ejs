@@ -1,0 +1,54 @@
+
+<style>
+    
+</style>
+<div class="sertifikat_wrapper">
+  
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+    	const pathName = location.pathname 
+	    const slicePath = pathName.slice(13, pathName.length);
+        console.log("Id", slicePath);
+	
+        
+      //  Team Get All
+      
+		axios.get(`/ariza/getAll/`)
+        .then(async (res) => {
+            let pdfArray = res.data
+			console.log("Pdf all", pdfArray)
+            let pdf = pdfArray.filter(function(item){
+            return item.user_Id == slicePath 
+        });
+        console.log("pdf one", pdf);
+        let user = {
+            userId: "",
+            pdf: ""
+        }
+        for (let item of pdf){
+            user.userId = item.user_Id
+            user.pdf = item.pdf
+        }
+        console.log("user pdf", user);
+
+        let iframe = $(".sertifikat_wrapper");
+            await iframe.html("");
+            if (user.pdf == ""){
+                iframe.append(` <h1>Siz hali sertifikat olmagansiz</h1>`)
+            } else {
+                iframe.append(
+                `
+                <a class="btn_serti" href="/uploads/sertificat/${user.pdf}" download><span>Sertifikatni yuklab olish</span></a>
+        
+                `
+            )
+            }
+            
+         
+        })
+        
+
+</script> 

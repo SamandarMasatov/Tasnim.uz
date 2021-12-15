@@ -1,0 +1,44 @@
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Kurslar</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-responsive-md">
+                    <thead>
+                        <tr>
+                            <th><strong>Name</strong></th>
+                            <th><strong>Img</strong></th>
+                            <th><strong>Title</strong></th>
+                            <th><strong>Description</strong></th>
+                            <th><strong>Lesson</strong></th>
+                            <th><strong>Time</strong></th>
+                            <th><strong></strong></th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        <% for (let item of course) { %>
+                        <tr>
+                            <td><strong><%= item.name %></strong></td>
+                            <td><div class="d-flex align-items-center">
+                                <img src="/uploads/course/<%= item.image %>" class="rounded" width="74" alt=""> 
+                               </div></td>
+                            <td><%= item.title %></td>
+                            <td><%= item.description %></td>
+                            <td><%= item.lesson %></td> 
+                            <td><%= item.lessontime %></td>
+                            <td>
+                                <div class="d-flex">
+                                    <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <%}%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

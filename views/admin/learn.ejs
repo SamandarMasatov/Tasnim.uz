@@ -1,0 +1,295 @@
+<h1>What you learn</h1>
+ <div>
+    <div class="col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Kursda nimalarni o'rganishini qo'shish</h4>
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form action="/learn/add" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label">Kursni tanlang</label>
+                            <select name="course_Id" class="default-select  form-control wide">
+                                <% for (let item of course) { %>
+                                <option value="<%= item._id %>"><%= item.name %></option>
+                                <%}%>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="mt-4 mb-3"> 
+                            <input 
+                                type="text"  
+                                class="form-control input-default " 
+                                placeholder="Nimani o'rgatasiz yozing"
+                                name="name"
+                                required="true"
+                            >
+                        </div>
+
+                       <button class="btn btn-primary" type="submit">Yuklash</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<!-- Vue js -->
+<div id="app">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Web dasturlash</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th><strong>N.</strong></th>
+                                <th><strong>O'rgatiladigan texnologiya nomi</strong></th>
+                                <th><strong>Tahrirlash</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item of web" :key="item._id">
+                                <td><strong>542</strong></td>
+                                <td>{{ item.name }}</td>
+                                <td>
+                                    <div class="d-flex">
+                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                        <form method="POST" class="hidden-r" :action="'/learn/delete/' + item._id + '?_method=DELETE'">
+                                            <button type="submit" class="btn btn-danger shadow btn-xs sharp me-1">
+                                              <i class="fa fa-trash"></i>
+                                             </button>
+                                          </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Kompyuter Savodxonligi</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th><strong>N.</strong></th>
+                                <th><strong>O'rgatiladigan texnologiya nomi</strong></th>
+                                <th><strong>Tahrirlash</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item of computer" :key="item._id">
+                                <td><strong>542</strong></td>
+                                <td>{{ item.name }}</td>
+                                <td>
+                                    <div class="d-flex">
+                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                        <form method="POST" class="hidden-r" :action="'/learn/delete/' + item._id + '?_method=DELETE'">
+                                            <button type="submit" class="btn btn-danger shadow btn-xs sharp me-1">
+                                              <i class="fa fa-trash"></i>
+                                             </button>
+                                          </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Grafik dizayn</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th><strong>N.</strong></th>
+                                <th><strong>O'rgatiladigan texnologiya nomi</strong></th>
+                                <th><strong>Tahrirlash</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item of design" :key="item._id">
+                                <td><strong>542</strong></td>
+                                <td>{{ item.name }}</td>
+                                <td>
+                                    <div class="d-flex">
+                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                        <form method="POST" class="hidden-r" :action="'/learn/delete/' + item._id + '?_method=DELETE'">
+                                            <button type="submit" class="btn btn-danger shadow btn-xs sharp me-1">
+                                              <i class="fa fa-trash"></i>
+                                             </button>
+                                          </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">3ds Max</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th><strong>N.</strong></th>
+                                <th><strong>O'rgatiladigan texnologiya nomi</strong></th>
+                                <th><strong>Tahrirlash</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item of max" :key="item._id">
+                                <td><strong>542</strong></td>
+                                <td>{{ item.name }}</td>
+                                <td>
+                                    <div class="d-flex">
+                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                        <form method="POST" class="hidden-r" :action="'/learn/delete/' + item._id + '?_method=DELETE'">
+                                            <button type="submit" class="btn btn-danger shadow btn-xs sharp me-1">
+                                              <i class="fa fa-trash"></i>
+                                             </button>
+                                          </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+<script>
+    var app = new Vue({  
+	el: '#app',
+	data: {
+       web: "array",
+       computer: "",
+       design: "array",
+       max: "array",
+	},
+	methods: {
+		
+	},
+    async mounted(){
+
+    //    Course get api ============================================================
+        let course = await axios.get(`/course/getAll/`)
+        let courseAll = course.data;
+			console.log("Course all", courseAll)
+
+
+
+       // Filter course web=====================================
+        let courseWeb = courseAll.filter(function(item){
+            return item.tag == "web"
+        })
+        // Search web id==============================
+        let courseWebId;
+        for(let item of courseWeb){
+            courseWebId = item._id
+        }
+
+
+
+
+       // Filter course Computer==================================
+        let courseComputer = courseAll.filter(function(item){
+            return item.tag == "ksb"
+        })
+        // Search computer id =================================
+        let courseComputerId;
+        for(let item of courseComputer){
+            courseComputerId = item._id
+        }
+       
+
+       // Filter course design==================================
+        let courseDesign = courseAll.filter(function(item){
+            return item.tag == "gra"
+        })
+        // Search design id =================================
+        let courseDesignId;
+        for(let item of courseDesign){
+            courseDesignId = item._id
+        }
+
+       // Filter course Max==================================
+        let courseMax = courseAll.filter(function(item){
+            return item.tag == "3ds"
+        })
+        // Search Max id =================================
+        let courseMaxId;
+        for(let item of courseMax){
+            courseMaxId = item._id
+        }
+       
+         
+    
+        // Api learn =======================================================================
+		let learn = await axios.get(`/learn/getAll/`)
+        let learnArray = learn.data
+			console.log("learn all", learnArray)
+
+    //   filter learn web=============================================================
+        let learnWeb = learnArray.filter(function(item){
+            return item.course_Id == courseWebId
+        })
+        this.web = learnWeb;
+
+    //   filter learn computer sciense===================================================
+        let learnComputer = learnArray.filter(function(item){
+            return item.course_Id == courseComputerId
+        })
+        this.computer = learnComputer;
+
+    //   filter learn design ===================================================
+        let learnDesign = learnArray.filter(function(item){
+            return item.course_Id == courseDesignId
+        })
+        this.design = learnDesign;
+
+    //   filter learn Max ===================================================
+        let learnMax = learnArray.filter(function(item){
+            return item.course_Id == courseMaxId
+        })
+        this.max = learnMax;
+        console.log("LEARN design", learnMax);
+        
+
+	 } 
+	 })
+  
+</script>
+

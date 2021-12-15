@@ -1,0 +1,102 @@
+<h1>Tahrirlash</h1> <div>
+    <div class="col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Jamoa tahrirlash</h4>
+            </div>
+
+            <div class="card-body">
+                <div class="basic-form">
+                    <form action="<%=`/team/info/${team._id}?_method=PUT`%>" method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <input 
+                                type="text"  
+                                class="form-control input-default " 
+                                name="name"
+                                value="<%= team.name %>"
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <input 
+                                type="text" 
+                                class="form-control input-default " 
+                                name="job" 
+                                value="<%= team.job %>"
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <input 
+                                type="number" 
+                                class="form-control input-default " 
+                                name="phone"
+                                value="<%= team.phone %>"
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <input 
+                                type="text" 
+                                class="form-control input-default " 
+                                name="instagram" 
+                                value="<%= team.instagram %>"
+                            >
+                        </div>
+                        <div class="mb-3">
+                            <input 
+                                type="text" 
+                                class="form-control input-default " 
+                                name="facebook" 
+                                value="<%= team.facebook %>"
+                            >
+                        </div>
+                        <div class="mb-3">
+                            <input 
+                                type="text" 
+                                class="form-control input-default " 
+                                name="telegram" 
+                                value="<%= team.telegram %>"
+                            >
+                        </div>
+                        <div class="mb-3">
+                            <input 
+                                type="text" 
+                                class="form-control input-default " 
+                                name="website" 
+                                value="<%= team.website %>"
+                            >
+                        </div>
+                        <div class="mb-3">
+                            <textarea 
+                            class="form-control" 
+                            cols="10"
+                            rows="10" 
+                            id="comment"
+                            name="description"
+                            ><%= team.description %></textarea>
+                        </div>
+                       <button class="btn btn-primary" type="submit">Saqlash</button>
+                    </form>
+                </div>
+
+                <div class="basic-form">
+                    <form action="<%=`/team/image/${team._id}?_method=PUT`%>" method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label>Rasmni tahrirlash</label> <br>
+                            <img width="300" height="400" src="/uploads/team/<%= team.image %>"  alt="Img" name="image">
+                        </div>
+                        <div class="mb-3">
+                            <input 
+                                type="file" 
+                                class="form-control input-default"
+                                name="image"
+                            >
+                        </div>
+                        <button class="btn btn-primary" type="submit">Saqlash</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

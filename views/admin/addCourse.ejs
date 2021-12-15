@@ -1,0 +1,86 @@
+<div>
+    <div class="col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Kurs qo'shish</h4>
+            </div>
+
+            <div class="card-body">
+                <div class="basic-form">
+                    <form action="/course/createCourse" method="POST" enctype="multipart/form-data">
+                        <div style="margin-bottom: 15px;" class="mb-3">
+                            <label class="form-label">Tagni tanlang tagni tanlash majburiy</label>
+                            <select name="tag" class="default-select  form-control wide">
+                             
+                                <option value="web">#web</option>
+                                <option value="ksb">#kompyuter savodxonligi</option>
+                                <option value="gra">#grafik dizayn</option>
+                                <option value="3ds">#3ds max</option>
+                               
+                            </select>
+                        </div>
+                        <div style="margin-top: 10px;" class="mb-3">
+                            <input 
+                                type="text" 
+                                class="form-control input-default " 
+                                placeholder="Kurs nomini yozing"
+                                name="name"
+                                required="true" 
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <input 
+                                type="text" 
+                                class="form-control input-default " 
+                                placeholder="Kurs maqsadi"
+                                name="title"
+                                required="true"
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <input 
+                                type="number" 
+                                class="form-control input-default " 
+                                placeholder="O'tiladigan darslar soni"
+                                name="lesson"
+                                required="true"
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <input 
+                                type="number" 
+                                class="form-control input-default " 
+                                placeholder="Kurs davomiyligi"
+                                name="lessontime"
+                                required="true"
+                            >
+                        </div>
+
+                        <div class="mb-3">
+                            <input 
+                                type="file" 
+                                class="form-control input-default"
+                                name="image"
+                                required="true"
+                            >
+                        </div>
+                        <div class="mb-3">
+                            <textarea 
+                            placeholder="Kurs haqida"
+                            class="form-control" 
+                            cols="10"
+                            rows="10"  
+                            id="comment"
+                            name="description"
+                            ></textarea>
+                        </div>
+                       <button class="btn btn-primary" type="submit">Yuklash</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

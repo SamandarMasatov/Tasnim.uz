@@ -1,0 +1,312 @@
+//  O'zgaruvchilar
+$text_main_color: #2f2d51;
+ 
+@mixin flex($justify: center, $align: center){
+     display: flex;
+     justify-content: $justify;
+     align-items: $align;
+}
+ .shior{
+     font-size: 26px;
+ }
+ .quality_price{
+     color: $text_main_color;
+     font-weight: 600;
+ }
+li{
+    list-style-type: none;
+}
+//  Course
+.more_course_info{
+    color: red !important;
+    transition: all 0.5s ease;
+}
+.more_course_info:hover{ 
+    color: red;
+}
+
+// Header 
+.full_cover{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba($color: #fff, $alpha: 0.6);
+    transition: all 0.5s ease-in-out;
+}
+.header{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.nav_header{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    .logo_s{
+        flex: 1 1 10rem;
+    }
+    .nav_link{
+        display: flex;
+        justify-content: space-around;
+        flex: 3 1 20rem;
+        margin: 0;
+        padding: 0;
+        a{
+            color: #fff;
+            font-size: 18px;
+        }
+    }
+    .header_btn{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1 1 10rem;
+        .btn_login{
+            width: 100px;
+            height: 40px;
+            background-color: rgba($color: #fff, $alpha: 0.1);
+            border-radius: 10px;
+            margin-right: 15px;
+            color: #fff;
+            @include flex();
+        }
+        .btn_register{
+            width: 140px;
+            height: 40px;
+            background-color: rgba($color: #fff, $alpha: 0.1);
+            border-radius: 10px;
+            @include flex();
+            color: #fff;
+        }
+        .user_name_icon{
+            display: flex;
+            align-items: center;
+            position: relative;
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            i{
+                color: #fff;
+            }
+            h4{
+                margin: 0;
+                color: #fff;
+            }
+            .fa-user-circle{
+                font-size: 27px;
+                margin-right: 10px;
+            }
+            .fa-chevron-down{
+                font-size: 15px;
+                margin-left: 5px;
+            }
+            .drop_down{
+                padding: 0 3px;
+                display: none;
+                width: 200px;
+                position: absolute;
+                z-index: 4;
+                border: 1px solid;
+                border-radius: 10px;
+                bottom: -200px;
+                left: 0;
+                background-color: #fff;
+                transition: all 1s ease-in-out;
+                li{
+                    padding: 5px 5px;
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 1px solid #2f2d51;
+                    i{
+                        font-size: 20px;
+                        color: #000;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.burger{
+    position: sticky;
+    display: none;
+    width: 30px;
+    margin-top: 34px;
+    top: 38px;
+    right: 37px;
+    z-index: 6;
+    span{
+       display: block;
+       margin: 4px 0;
+       height: 4px;
+       width: 100%;
+       background-color: #fff;
+       border-radius: 3px;
+    }
+}
+
+// Home container
+
+// Responsive 
+
+@media only screen and (max-width: 1000px){
+    .nav_link{
+        flex-direction: column;
+        @include flex();
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 3;
+        width: 80%;
+        height: 100%;
+        background-color: #fff;
+        transition: all 0.5s ease-in-out;
+        a{
+            color: $text_main_color !important;
+        }
+    }
+    
+    .header_btn{
+        justify-content: flex-end;
+        margin-right: 40px;
+        margin-right: 28px;
+    }
+    .burger{
+        display: block;
+    }
+
+}
+@media only screen and (max-width: 550px){
+    .navbar-brand-img{
+        height: 3.1rem !important;
+    }
+    .btn_login{
+        width: 65px !important;
+    }
+    .btn_register{
+        width: 120px !important;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .navbar-brand-img{
+        height: 2.9rem !important;
+    }
+    .btn_login{
+        margin-right: 10px !important;
+        width: 65px !important;
+        height: 35px !important;
+        font-size: 13px;
+    }
+    .btn_register{
+        width: 120px !important;
+        height: 35px !important;
+        font-size: 13px;
+    }
+    .burger {
+        margin-top: 36px;
+        width: 25px;
+        right: 20px;
+        span{
+            height: 3px;
+        }
+    }
+    .header_btn{
+        margin-right: 28px;
+    }
+}
+@media only screen and (max-width: 375px){
+    .navbar-brand-img{
+        height: 2.6rem !important;
+    }
+    .btn_login{
+        width: 53px !important;
+        height: 30px !important;
+        font-size: 13px;
+    }
+    .btn_register{
+        width: 106px !important;
+        height: 30px !important;
+        font-size: 13px;
+    }
+    .header_btn{
+        margin-right: 28px;
+    }
+}
+@media only screen and (max-width: 325px){
+    .header{
+        height: 70px;
+    }
+    .navbar-brand-img{
+        height: 2.1rem !important;
+    }
+    .btn_login{
+        width: 47px !important; 
+        height: 30px !important;
+        font-size: 13px;
+    }
+    .btn_register{
+        width: 99px !important;
+        height: 30px !important;
+        font-size: 13px;
+    }
+    .header_btn{
+        margin-right: 28px;
+        
+    }
+    .burger {
+        margin-top: 25px;
+        width: 23px;
+        span{
+            margin: 3px 0;
+        }
+    }
+}
+
+.drop_active{
+    display: block !important;
+}
+
+.header_active{
+    left: 0;
+}
+.full_cover_active{
+    display: block;
+}
+
+// sertifikat 
+
+.sertifikat_wrapper{
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn_serti{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 60px;
+    color: #fff;
+    background-color: rgb(39, 39, 218);
+    font-size: 30px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-family: sans-serif;
+    border-radius: 10px;
+}

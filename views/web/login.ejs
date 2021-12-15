@@ -1,0 +1,42 @@
+<style>
+    .header_user{
+    background-color: #2f2d51;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.contact_section{ 
+    margin-top: 55px;
+}
+#contact{
+    margin: 0 auto;
+}
+.btn{
+    margin: 0 auto;
+}
+</style>
+<div class="header_user"></div>
+
+<div class="container contact_section">
+    <div class="row row-cols-md-2 mb-8 mb-lg-11">
+        <div class="col-lg" id="contact">
+            <h1 class="mb-6 text-center">Profilga kirish</h1>
+            <form action="/user/login" method="POST"  class="row">
+                <div class="form-group mb-6 col-xl-6">
+                    <label for="exampleInputTitle2">Telefon raqaminggiz</label>
+                    <input name="phone" required="true" type="number" class="form-control placeholder-1" id="exampleInputTitle2" placeholder="Ro'yhatdan o'tgan telefon raqamingizni yozing">
+                </div>
+
+                <div class="form-group mb-6 col-xl-6">
+                    <label for="exampleInputTitle1">Parolinggizni yozing</label>
+                    <input name="password" required="true" type="password" class="form-control placeholder-1" id="exampleInputTitle1" placeholder="Ro'yhatdan o'tgan parollingizni yozing">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-block mw-md-300p">Jo'natish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

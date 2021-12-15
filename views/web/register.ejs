@@ -1,0 +1,63 @@
+<style>
+    .header_user{
+    background-color: #2f2d51;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.contact_section{
+    margin-top: 55px;
+}
+#contact{
+    margin: 0 auto;
+}
+.btn{
+    margin: 0 auto;
+}
+</style>
+<div class="header_user"></div>
+
+<div class="container contact_section">
+    <div class="row row-cols-md-2 mb-8 mb-lg-11">
+        <div class="col-md" id="contact">
+            <h1 class="mb-6 text-center">Ro'yhatdan o'tish va Kursga yozilish</h1>
+            <form action="/user/register" method="POST"  class="row">
+                <div class="form-group mb-6 col-xl-6">
+                    <label for="exampleInputTitle1">Ism</label>
+                    <input name="name" required="true" type="text" class="form-control placeholder-1" id="exampleInputTitle1" placeholder="Ismingizni yozing">
+                </div>
+
+                <div class="form-group mb-6 col-xl-6">
+                    <label for="exampleInputTitle2">Telefon</label>
+                    <input name="phone" required="true" type="number" class="form-control placeholder-1" id="exampleInputTitle2" placeholder="Telefon raqamingizni yozing">
+                </div>
+
+                <div class="form-group mb-6 col-xl-6">
+                    <label for="exampleInputTitle2">Parol</label>
+                    <input name="password" required="true" type="number" class="form-control placeholder-1" id="exampleInputTitle2" placeholder="Parol o'ylab toping">
+                </div>
+
+                <div class="form-group mb-6 col-xl-6">
+                    <label for="exampleInputTitle2">Kurs vaqtini tanlang</label>
+                   <select name="courseTime" class="form-control form-select placeholder-1">
+                    <optgroup label="Toq kunlar">
+                        <option value="08:30 dan 10:30 gacha">08:30 dan 10:30 gacha</option>
+                        <option value="10:30 dan 12:30 gacha">10:30 dan 12:30 gacha</option>
+                    </optgroup>
+                    <optgroup label="Juft kunlar">
+                        <option value="14:00 dan 16:00 gacha">14:00 dan 16:00 gacha</option>
+                        <option value="16:00 dan 18:00 gacha">16:00 dan 18:00 gacha</option>
+                        <option value="18:00 dan 20:00 gacha">18:00 dan 20:00 gacha</option>
+                    </optgroup>
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-block mw-md-300p">Jo'natish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

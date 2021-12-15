@@ -1,0 +1,67 @@
+<h1>Gallery add</h1> <div>
+    <div class="col-xl-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Gallery qo'shish</h4>
+            </div>
+
+            <div class="card-body">
+                <div class="basic-form">
+                    <form action="/gallery/add" method="POST" enctype="multipart/form-data">
+                    
+                        <div class="mt-4 mb-3">
+                            <input 
+                                type="file"  
+                                class="form-control input-default " 
+                                placeholder="Rasm qoshing"
+                                name="image"
+                                required="true"
+                            >
+                        </div>
+
+                       <button class="btn btn-primary" type="submit">Yuklash</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Gallery</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="example3" class="display" style="min-width: 845px">
+                    <thead>
+                        <tr>
+                            <th>Rasm</th>
+                            <th>Tahrirlash</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (let item of gallery) { %>
+                        <tr> 
+                            <td><img class="rounded" width="100" src="/uploads/gallery/<%= item.image %>" alt="Team member photo"></td>
+                           <td> 
+                                <div class="d-flex">
+                                    <a href="/team/<%= item._id %>" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
+                                    <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-file-alt"></i></a>
+                                    
+                                    <form method="POST" class="hidden-r" action="<%=`/gallery/delete/${item._id}?_method=DELETE`%>">
+                                        <button type="submit" class="btn btn-danger shadow btn-xs sharp me-1">
+                                          <i class="fa fa-trash"></i>
+                                         </button>
+                                      </form>
+                                </div>												
+                            </td>												
+                        </tr>
+                        <%}%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
